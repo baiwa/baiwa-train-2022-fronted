@@ -1,23 +1,55 @@
-<!-- <p>home works!</p> -->
-<!-- <h1 routerLink="/product">GO TO PRODUCT</h1> -->
-<div style="padding: 50px;">
-    <button type="button" class="btn btn-primary" routerLink="/product">GO TO
-        PRODUCT</button>
-    <h1>{{listData.length}}</h1>
-    <div class="form-group">
-        <label>ชื่อ</label>
-        <input type="text" class="form-control" placeholder="ชื่อ" [(ngModel)]="form.name">
-    </div>
-    <div class="form-group">
-        <label>อายุ</label>
-        <input type="text" class="form-control" placeholder="อายุ" [(ngModel)]="form.age">
-    </div>
-    <button type="button" class="btn btn-primary btn-lg" (click)="save()">เพิ่มข้อมูล</button>
-    <div class="alert alert-primary mt-3" role="alert" *ngFor="let item of listData;let i = index">
-        <div style="justify-content: space-between;display: flex;">
-            <h5>ลำดับที่ {{i+1}} ชื่อ: {{item.name}} อายุ: {{item.age}}</h5>
-            <button type="button" class="btn btn-danger" (click)="delete(i)">ลบ</button>
+<body>
+    <!-- <nav class="navbar" id="top">
+        <div class="inner">
+            <a href="http://sixrevisions.com/css/responsive-background-image/">Read Tutorial</a>
         </div>
-    </div>
+    </nav> -->
+    <div style=" background-color: rgba(0, 0, 0, 0.6);height: 100vh;">
+        <header class="container">
 
-</div>
+            <section class="content">
+                <div class="container-1">
+                    <div class="box">
+
+                        <div class="title">
+                            <span class="block"></span>
+                            <h1>มหาวิทยาลัยพะเยา University of Phayao<span></span></h1>
+                        </div>
+
+                        <!-- <div class="role">
+                            <div class="block"></div>
+                            <p>UI Dev designer</p>
+                        </div> -->
+
+                    </div>
+                </div>
+                <!-- <h1 class="font-size-h">มหาวิทยาลัยพะเยา University of Phayao </h1> -->
+                <p class="sub-title"><strong>BAIWA COMPANY</strong>
+                    <br />โปรไฟล์นักศึกษาฝึกงานมหาวิทยาลัยพะเยา
+                </p>
+
+
+
+                <!-- Some content to demonstrate viewport scrolling behavior -->
+                <div>
+                    <div class="row">
+                        <div class="col-12 col-xl" style="padding: 12px;" *ngFor="let data of list">
+                            <div class="card p-0">
+                                <div class="card-image">
+                                    <img class="image-size" src="{{data.image}}" alt="">
+                                </div>
+                                <div class="card-content d-flex flex-column align-items-center">
+                                    <h4 class="pt-2">PROFILE</h4>
+
+                                    <ul class="social-icons d-flex justify-content-center">
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </header>
+    </div>
+</body>

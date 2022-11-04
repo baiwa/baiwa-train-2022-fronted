@@ -1,2 +1,17 @@
-<p>product works!</p>
-<h1 routerLink="/">GO TO HOME</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ลำดับ</th>
+            <th scope="col">ชื่อ</th>
+            <th scope="col">อายุ</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of this.list;let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{data.name}}</td>
+            <td>{{data.age}}</td>
+        </tr>
+
+    </tbody>
+</table>

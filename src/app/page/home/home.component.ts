@@ -9,7 +9,7 @@ export interface MyData {
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, AfterViewInit {
 
@@ -19,6 +19,38 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   listData: MyData[] = [];
+
+  list = [
+    {
+      name: "SomeOne Famous",
+      image: "assets/img/1.jpg",
+      positon: "Creative Desinger"
+    },
+    {
+      name: "SomeOne Famous",
+      image: "assets/img/2.jpg",
+    },
+    {
+      name: "SomeOne Famous",
+      image: "assets/img/3.jpg",
+      positon: "Creative Desinger"
+    },
+    {
+      name: "SomeOne Famous",
+      image: "assets/img/4.png",
+      positon: "Creative Desinger"
+    },
+    {
+      name: "SomeOne Famous",
+      image: "assets/img/5.jpg",
+      positon: "Creative Desinger"
+    },
+    {
+      name: "SomeOne Famous",
+      image: "assets/img/6.jpg",
+      positon: "Creative Desinger"
+    }
+  ]
 
   name: string = "frame";
   name1: any;
