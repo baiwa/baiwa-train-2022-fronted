@@ -22,33 +22,39 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   list = [
     {
-      name: "SomeOne Famous",
+      name: "ต้น",
       image: "assets/img/1.jpg",
-      positon: "Creative Desinger"
+      positon: "Creative Desinger",
+      url: "http://49.0.80.15:6564/baiwa-train-2022-fronted-tonz/"
     },
     {
-      name: "SomeOne Famous",
+      name: "ไก่โต้ง",
       image: "assets/img/2.jpg",
+      url: "http://49.0.80.15:6564/baiwa-train-2022-fronted-kaitong/"
     },
     {
-      name: "SomeOne Famous",
+      name: "เนซ่า",
       image: "assets/img/3.jpg",
-      positon: "Creative Desinger"
+      positon: "Creative Desinger",
+      url: "http://49.0.80.15:6564/baiwa-train-2022-fronted-NayZa/"
     },
     {
-      name: "SomeOne Famous",
+      name: "โอปอ",
       image: "assets/img/4.png",
-      positon: "Creative Desinger"
+      positon: "Creative Desinger",
+      url: "http://49.0.80.15:6564/baiwa-train-2022-fronted-opor/"
     },
     {
-      name: "SomeOne Famous",
+      name: "เน",
       image: "assets/img/5.jpg",
-      positon: "Creative Desinger"
+      positon: "Creative Desinger",
+      url: "http://49.0.80.15:6564/baiwa-train-2022-fronted-Nay/"
     },
     {
-      name: "SomeOne Famous",
+      name: "หนุ่ย",
       image: "assets/img/6.jpg",
-      positon: "Creative Desinger"
+      positon: "Creative Desinger",
+      url: "http://49.0.80.15:6564/baiwa-train-2022-fronted-nui/"
     }
   ]
 
@@ -65,6 +71,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
 
+  }
+
+  openTab(data: any) {
+    return window.open(data);
   }
 
   gotoProduct() {
