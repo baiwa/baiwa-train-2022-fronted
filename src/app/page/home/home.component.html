@@ -1,0 +1,23 @@
+<!-- <p>home works!</p> -->
+<!-- <h1 routerLink="/product">GO TO PRODUCT</h1> -->
+<div style="padding: 50px;">
+    <button type="button" class="btn btn-primary" routerLink="/product">GO TO
+        PRODUCT</button>
+    <h1>{{listData.length}}</h1>
+    <div class="form-group">
+        <label>ชื่อ</label>
+        <input type="text" class="form-control" placeholder="ชื่อ" [(ngModel)]="form.name">
+    </div>
+    <div class="form-group">
+        <label>อายุ</label>
+        <input type="text" class="form-control" placeholder="อายุ" [(ngModel)]="form.age">
+    </div>
+    <button type="button" class="btn btn-primary btn-lg" (click)="save()">เพิ่มข้อมูล</button>
+    <div class="alert alert-primary mt-3" role="alert" *ngFor="let item of listData;let i = index">
+        <div style="justify-content: space-between;display: flex;">
+            <h5>ลำดับที่ {{i+1}} ชื่อ: {{item.name}} อายุ: {{item.age}}</h5>
+            <button type="button" class="btn btn-danger" (click)="delete(i)">ลบ</button>
+        </div>
+    </div>
+
+</div>
