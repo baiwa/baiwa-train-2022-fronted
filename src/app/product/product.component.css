@@ -1,0 +1,35 @@
+.wrapper{
+    background: #406861;
+    height: 100vh;
+}
+
+.htext{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 58px;
+
+    color: #FFFFFF;
+}
+
+.text{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: #FFFFFF;
+}
+
+.boxtable{
+
+    /* position: absolute;
+    
+    left: 11px;
+    top: 250px; */
+
+    background: #40B99C;
+    border-radius: 5px;
+}

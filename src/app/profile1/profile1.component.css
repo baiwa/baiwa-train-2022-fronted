@@ -45,18 +45,11 @@
     top: 799px;
 
     background: #40B99C;
-    border-radius: 15px;
+    border-radius: 10px;
+    border: none;
+    color: white;
 }
 
-.buttontext{
-    font-family: 'Inter';
-    font-style: normal; 
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 29px;
-
-    color: #FFFFFF;
-}
 .heartext{
     font-family: 'Inter';
     font-style: normal;
@@ -69,11 +62,8 @@
 
 .image{
     position: absolute;
-    width: 391px;
     height: 622px;
-    left: 300px;
+    left: 189px;
     top: 140px;
-
-    background: url(https://scontent.fbkk28-1.fna.fbcdn.net/v/t39.30808-6/278996496_3274812036134671_6276087287518339805_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeE5WzgJ5NA9CtvQdAyAc7bTVgd50Wv9nVtWB3nRa_2dW9LkHMvsJkpEDrZUCyGeBeXjovX7jFUElWT06Rd_pY57&_nc_ohc=lhtSnjFnXK8AX_sJeff&_nc_ht=scontent.fbkk28-1.fna&oh=00_AfDiEGjZ0dyEDpZYtE8nrFUpTkx0kzaZg_iaJ_7sWkM8Ng&oe=6366772A);
     border-radius: 30px;
 }

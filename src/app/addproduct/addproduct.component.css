@@ -1,0 +1,32 @@
+.wrapper{
+    background: #406861;
+    height: 100vh;
+}
+
+.boxinput{
+    background: #40B99C;
+    border-radius: 10px;
+}
+
+.colorbotton{
+    border-radius: 5px;
+    border: none;
+    background-color: #40B99C;
+    height: 50px;
+    width: 120px;
+    color: white;
+}
+
+.htext{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 58px;
+
+    color: #FFFFFF;
+}
+
+.textcolor{
+    color: white;
+}
