@@ -1,20 +1,14 @@
-.backgroud{
-    position: relative;
-height: 100vh;
-background: #204056;
-}
 
 .profile{
     position: absolute;
-width: 850px;
-height: 377px;
+width: 700px;
 left: 99px;
 top: 600px;
 
 font-family: 'Inter';
 font-style: normal;
 font-weight: 400;
-font-size: 60px;
+font-size: 55px;
 line-height: 73px;
 
 color: #FFFFFF;
@@ -37,11 +31,11 @@ color: #FFFFFF;
 }
 
 .button{
-    position: absolute;
+    position: relative;
 width: 490px;
 height: 108px;
-left: 1197px;
-top: 850px;
+left: 1350px;
+top: 830px;
 
 background: #E28686;
 border-radius: 30px;
@@ -56,4 +50,21 @@ top: 82px;
 
 /* background: url(https://scontent.fbkk28-1.fna.fbcdn.net/v/t1.6435-9/74893027_1277383659115630_3345071365081268224_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=174925&_nc_eui2=AeEqwlxFsb_yiBngvWpzSaDdXou79yjOGNdei7v3KM4Y18unbo4PuG99IgUJWBk1mksgiUtMFVSLfAgdUEKDYzdn&_nc_ohc=4yeWxw2tB4AAX9R7K4F&_nc_ht=scontent.fbkk28-1.fna&oh=00_AfDFS9qO3Q8caN4BylSI4iBquIqFKUJLaZ35d99-OFzqtg&oe=6389B83F); */
 border-radius: 64px;
+
+}
+
+.fontPro{
+    position: absolute;
+width: 291px;
+height: 69px;
+left: 1342px;
+top: 988px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
 }

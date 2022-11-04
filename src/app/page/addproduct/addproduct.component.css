@@ -1,0 +1,36 @@
+.backboxinput {
+  position: absolute;
+  width: 1870px;
+  height: 551px;
+  left: 43px;
+  top: 162px;
+
+  background: #e28686;
+  border-radius: 30px;
+}
+
+.boxinput {
+  /* position: absolute;
+  width: 446px;
+  height: 66px;
+  left: 287px;
+  top: 0px; */
+
+  background: #d9d9d9;
+  border-radius: 30px;
+}
+
+.button1 {
+    position: relative;
+    width: 339px;
+    height: 79px;
+    top: 750px;
+    right: 35px;
+    
+    background: #E28686;
+    border-radius: 30px;
+}
+
+.b {
+  border: none;
+}

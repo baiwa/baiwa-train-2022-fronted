@@ -1,0 +1,38 @@
+<!-- <h1>home works!</h1>
+<h2 routerLink="product">Product</h2> -->
+
+<!-- <h1 style="margin-top: 50px ;" >{{name}}</h1>
+<h1 style="margin-top: 50px;" >{{number}}</h1> -->
+
+<!-- <h1>{{form.name}}</h1> -->
+<!-- <h1>{{form.age}}</h1> -->
+
+<div style="padding: 50px;">
+    <button type="button" class="btn btn-primary" (click)="gotoProfile()">Go to Profile</button>
+    <button type="button" class="btn btn-primary" (click)="gotoProduct()">Go to Product</button>
+    <h1>{{listData.length}}</h1>
+    <div class="form-group">
+        <label>ชื่อ</label>
+        <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="ชื่อ" [(ngModel)]="form.name">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">อายุ</label>
+        <input type="text" class="form-control" placeholder="อายุ" [(ngModel)]="form.age">
+    </div>
+    <button type="button" class="btn btn-primary btn-lg" (click)="save()">เพิ่มข้อมูล</button>
+
+    <div class="alert alert-primary" role="alert" *ngFor="let item of listData;let i = index">
+        <div style="justify-content: space-between; display: flex;">
+            <h5>ลำดับที่ {{i+1}} ชื่อ : {{item.name}} อายุ : {{item.age}}</h5> 
+            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                <div class="btn-group mr-2" role="group" aria-label="First group"> 
+                     <button type="button" class="btn btn-primary " (click)="Delete(i)">แก้ไข</button>
+                </div>
+                <div class="btn-group mr-2" role="group" aria-label="Second group"> 
+                    <button type="button" class="btn btn-danger " (click)="Delete(i)">ลบ</button>
+               </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
