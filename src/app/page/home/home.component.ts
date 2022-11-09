@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -12,7 +13,8 @@ export interface MyData {
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, AfterViewInit {
-
+  data : any[] = []
+  res : any
   form: MyData = {
     name: '',
     age: 0
@@ -65,11 +67,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   constructor(
     private router: Router,
+    private http: HttpClient
   ) {
 
   }
 
   ngOnInit(): void {
+  this.http.get('https://anapioficeandfire.com/api/characters/583').subscribe(response => {
+  this.data.push(response);
+  this.res = this.data[0]
+  console.log('res : ',response);
+  });
 
   }
 
@@ -87,7 +95,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
       }
     });
   }
-
+  // this.data.push(response)
+  // this.res = this.data[0].aliases;
+  // console.log('res :' , this.res);
   ngAfterViewInit() {
     // ...
   }

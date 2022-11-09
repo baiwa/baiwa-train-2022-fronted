@@ -1,0 +1,61 @@
+<!-- <table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ลำดับ</th>
+            <th scope="col">ชื่อ</th>
+            <th scope="col">อายุ</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of this.list;let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{data.name}}</td>
+            <td>{{data.age}}</td>
+        </tr>
+
+    </tbody>
+</table> -->
+
+
+<div class="container-space">
+
+    <div class="card mb-5 ">
+        <div class="card-header">
+          {{textHead}}
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label >ยี่ห้อ</label>
+                        <select [disabled]="detail" class="form-control" [(ngModel)]="form.brand">
+                          <option *ngFor="let item of list" [value]="item.code">{{item.name}}</option>
+                        </select>
+                      </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+                        <label >ราคา</label>
+                        <input [disabled]="detail" type="text" class="form-control"placeholder="ราคา" [(ngModel)]="form.price">
+                      </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+                        <label >ปริมาณ</label>
+                        <input [disabled]="detail" type="text" class="form-control"placeholder="ปริมาณ" [(ngModel)]="form.total">
+                      </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <button type="button" class="btn btn-primary mr-3" style="margin-right: 10px;" routerLink="/product">ย้อนกลับ</button>
+                    <button *ngIf="!detail" type="button" class="btn btn-info ml-4"(click)="appProduct()" >{{textButton}}</button>
+                </div>
+            </div>
+        </div>
+      </div>
+
+     
+
+</div>
+

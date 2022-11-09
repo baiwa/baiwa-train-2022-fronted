@@ -1,4 +1,4 @@
-<table class="table">
+<!-- <table class="table">
     <thead>
         <tr>
             <th scope="col">ลำดับ</th>
@@ -14,4 +14,70 @@
         </tr>
 
     </tbody>
-</table>
+</table> -->
+
+
+<div class="container-space">
+
+    <div class="card mb-5 ">
+        <div class="card-header">
+          รายการสินค้า
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label >ยี่ห้อ</label>
+                        <select class="form-control" >
+                            <option selected disabled>กรุณาเลือกยี่ห้อ</option>
+                          <option *ngFor="let item of list" [value]="item.code">{{item.name}}</option>
+                        </select>
+                      </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label >ราคา</label>
+                        <input type="text" class="form-control"placeholder="ชื่อ">
+                      </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label >ปริมาณ</label>
+                        <input type="text" class="form-control"placeholder="นามสกุล">
+                      </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <button type="button" class="btn btn-primary mr-3" style="margin-right: 10px;">ค้นหา</button>
+                    <button type="button" class="btn btn-info ml-4" (click)="gotoProduct()">เพิ่มข้อมูล</button>
+                </div>
+            </div>
+            <table class="table table-striped mt-4">
+                <thead>
+                  <tr>
+                    <th scope="col">ลำดับที่</th>
+                    <th scope="col">ยี่ห้อ</th>
+                    <th scope="col">ราคา</th>
+                    <th scope="col">ปริมาณ</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let data of form ; let i = index">
+                    <th scope="row">{{i + 1}}</th>
+                    <td>{{getDataName(data.brand)}}</td>
+                    <td>{{ data.price }}</td>
+                    <td>{{ data.total }}</td>
+                    <th scope="col" (click)="detailProduct()" style="cursor:pointer">รายละเอียด</th>
+                    <th scope="col" (click)="editProduct()"style="cursor:pointer">แก้ไข</th>
+                    <th scope="col" (click)="deleteProduct(data.id)"style="cursor:pointer">ลบ</th>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+      </div>
+
+     
+
+</div>
+

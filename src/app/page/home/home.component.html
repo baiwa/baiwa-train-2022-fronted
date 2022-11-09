@@ -46,6 +46,22 @@
                         </div>
                     </div>
                 </div>
+                <div>
+                    <div class="row">
+                        <div class="col-12 col-xl" style="padding: 12px;" *ngFor="let data of res.aliases let i = index">
+                            <div class="card">
+                                <h3 style="color: #000;margin-top: 10px;">{{res.aliases[i]}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-xl" style="padding: 12px;" *ngFor="let data of res.tvSeries let i = index">
+                            <div class="card">
+                                <h3 style="color: #000;margin-top: 10px;">{{res.tvSeries[i]}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </header>
     </div>
