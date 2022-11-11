@@ -8,3 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'baiwa-train-2022_fronted';
 }
+
+

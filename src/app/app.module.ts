@@ -4,15 +4,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './page/home/home.component';
 import { ProductComponent } from './page/product/product.component';
 import { ProfileComponent } from './page/profile/profile.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AddProductComponent } from './page/add-product/add-product.component';
+
 
 
 
 @NgModule({
   declarations: [
-    AppComponent, ProfileComponent,ProductComponent  ,HomeComponent
+    AppComponent, ProfileComponent,ProductComponent  ,AddProductComponent,
   ],
   imports: [
     
@@ -20,6 +22,8 @@ import { ProfileComponent } from './page/profile/profile.component';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

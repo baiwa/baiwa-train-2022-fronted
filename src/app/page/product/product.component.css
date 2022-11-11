@@ -1,60 +1,84 @@
 .p1 {
-
-    height: 100vh;
-
+  
     background: #158686;
+    height: 100%;
 }
 
-.p2 {
-    
-    top: 128px;
 
+.p2 {
+    top: 128px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 64px;
-    line-height: 77px;
+    font-size: 45px;
+    line-height: 127px;
     text-align: center;
-
     color: #FFFFFF;
+
 }
 
 .p3 {
-    
-    top: 239px;
-    
     background: #33ACA5;
 }
-.p4{
+
+.p4 {
+    border-color: #33ACA5;
+    width: 95px;
+    height: 38px;
     background: #33ACA5;
-border-radius: 50px;
- 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 36px;
-line-height: 44px;
-text-align: center;
-
-color: #FFFFFF;
+    border-radius: 7px;
+    font-size: 18px;
+    text-align: center;
+    color: #FFFFFF;
 }
-.p5{
-    font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 36px;
-line-height: 44px;
-text-align: center;
 
-color: #FFFFFF;
+.p5 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 44px;
+    text-align: center;
+    color: #FFFFFF;
 }
-.p6{
-    font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 32px;
-line-height: 39px;
-text-align: center;
 
-color: #FFFFFF;
+.p6 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.p7 {
+    font-style: normal;
+    font-size: 25px;
+    line-height: 39px;
+    color: #FFFFFF;
+}
+
+/* .home6 {
+    width: 444px;
+    height: 72px;
+
+    border-radius: 10px
+}
+.container{
+    margin : 4% 8% 8% 8% ;
+    
+} */
+.p8 {
+    text-align: center;
+}
+
+.home6 {
+    width: 444px;
+    height: 72px;
+    border-radius: 10px
+}
+
+.container {
+    margin-left: 16%;
 }

@@ -2,6 +2,7 @@
   "name": "baiwa-train-2022-fronted",
   "version": "0.0.0",
   "scripts": {
+    "build:prod": "ng build  --base-href /baiwa-train-2022-fronted-NayZa/ --build-optimizer --aot --output-hashing=all",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",

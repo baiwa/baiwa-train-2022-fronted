@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './page/home/home.component';
+import { AddProductComponent } from './page/add-product/add-product.component';
 import { ProductComponent } from './page/product/product.component';
 import { ProfileComponent } from './page/profile/profile.component';
 
@@ -8,7 +8,7 @@ import { ProfileComponent } from './page/profile/profile.component';
 
 const routes: Routes = [
   { path: '', component: ProfileComponent },
-  { path: 'add', component: HomeComponent },
+  { path: 'addProduct', component: AddProductComponent },
   { path: 'product', component: ProductComponent },
 
   
@@ -17,7 +17,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [ RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -1,50 +1,199 @@
 <div class="p1">
 
-  <div class="row">
-    <div class="col" style="padding: 100px;">
-      <div class="p2" style="text-align:center">ข้อมูลสินค้า</div>
-      
-        <button type="button" class="p4" routerLink="/add"> เพิ่มข้อมูลสินค้า</button>
-      
-      
-      <div class="p3">
-        <div>
-          <table class="table table-bordered" style="font-size: 30px">
-            <thead>
-              <tr class="p5">
-                <th scope="col">ลำดับ</th>
-                <th scope="col">ยี่ห้อ</th>
-                <th scope="col">ประเภท</th>
-                <th scope="col">รสชาติ</th>
-                <th scope="col">ปริมาณ</th>
-                <th scope="col">ราคา</th>
-                <th scope="col">รายละเอียด</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="p6" *ngFor="let item of listData;let i =index">
-                <th scope="row">{{i+1}}</th>
-                <td>{{item.name}}</td>
-                <td>{{item.type}}</td>
-                <td>{{item.taste}}</td>
-                <td>{{item.amount}}</td>
-                <td>{{item.money}}</td>
-                <td>
-                  <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                    <div class="btn-group mr-2" role="group" aria-label="First group">
-                      <button type="button" class="btn btn-primary ">แก้ไข</button>
-                    </div>
-                    <div class="btn-group mr-2" role="group" aria-label="Second group">
-                      <button type="button" class="btn btn-danger " (click)="delete(i)">ลบ</button>
+
+  <div class="row" style="background: #158686;">
+    <div class="p2" style="text-align:center ">ข้อมูลสินค้า</div>
+    <div class="col ">
+      <div class="container">
+
+        <div class="card mt-2">
+          <div class="card-header" style="background-color:#50e1e1; color: #fff;">
+            ค้นหาสินค้า
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col">
+                <div class="row" style="margin-left: 13%;">
+                  <div class="home6">
+                    <div class="form-group">
+                      <label for="formGroupExampleInput " style="margin-right: 20px;">ยี่ห้อ </label>
+                      <input [disabled]="detail" type="text" class="form-control" id="formGroupExampleInput"
+                        placeholder="กรุณากรอกยี่ห้อ" [(ngModel)]="formSearch.name">
                     </div>
                   </div>
-                </td>
-            </tbody>
-          </table>
+                  <div class="home6">
+                    <div class="form-group">
+                      <label for="formGroupExampleInput2">ราคา </label>
+                      <input [disabled]="detail" type="number" class="form-control" id="formGroupExampleInput2"
+                        placeholder="กรุณากรอกราคา " [(ngModel)]="formSearch.money">
+                    </div>
+                  </div>
+                </div>
+                <div class="row mt-2" style="margin-left: 13%;">
+                  <div class="home6 ">
+                    <label for="formGroupExampleInput">รสชาติ </label>
+                    <select [disabled]="detail" class="form-select " aria-label="Default select example" selected
+                      [(ngModel)]="formSearch.taste">
+                      <option>กรุณาเลือกรสชาติ</option>
+                      <option value="1">หมูสับ</option>
+                      <option value="2">ต้มยำกุ้ง</option>
+                      <option value="3">ต้มเเซ่บ</option>
+                    </select>
+                  </div>
+                  <div class="home6">
+                    <div class="form-group">
+                      <label for="formGroupExampleInput">ปริมาณ </label>
+                      <input [disabled]="detail" type="number" class="form-control" id="formGroupExampleInput"
+                        placeholder="กรุณากรอกปริมาณ" [(ngModel)]="formSearch.amount">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row" style="margin-left: 13%;">
+                <div class="home6 mt-2">
+                  <label for="formGroupExampleInput">ประเภท </label>
+                  <select [disabled]="detail" class="form-select" aria-label="Default select example"
+                    [(ngModel)]="formSearch.type">
+                    <option selected>กรุณาเลือกประเภท</option>
+                    <option value="001">ซอง</option>
+                    <option value="002">ถ้วย</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+            <div class="col" style="justify-content: space-between;display: flex;">
+              <button type="button" class="p4 text-center"
+                style="justify-content: space-between;display: flex; margin-left: 10px;"
+                (click)="addProduct('add',0)">เพิ่มสินค้า
+              </button>
+                <button type="button" class="btn btn-secondary mr-3" (click)="searchAll()">ค้นหา</button>
+            </div>
+          </div>
+              <div class="col text-center mt-3">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-  
-  
+
+
+      <div class="row">
+        <div class="col" style="padding-left: 180px; padding-right: 111px;">
+          <div class="p3 mt-2" style="border-radius: 20px;">
+            <table class="table table-bordered" style="font-size: 30px">
+              <thead>
+                <tr class="p5">
+                  <th scope="col">ลำดับ</th>
+                  <th scope="col">ยี่ห้อ</th>
+                  <th scope="col">ราคา</th>
+                  <th scope="col">รสชาติ</th>
+                  <th scope="col">ปริมาณ</th>
+                  <th scope="col">ประเภท</th>
+                  <th scope="col">รายละเอียด</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="p7" style="text-align: center;" *ngFor="let data of list;let i =index">
+                  <th scope="row">{{i+1}}</th>
+                  <td>{{data.name}}</td>
+                  <td>{{data.money}}</td>
+                  <td>{{data.taste}}</td>
+                  <td>{{data.amount}}</td>
+                  <td>{{data.type}}</td>
+                  <td>
+                    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                      <div class="col" style="text-align: center; ">
+                        <div class="btn-group mr-2" role="group" aria-label="First group">
+                          <button style="margin-right: 10px;" type="button" class="btn btn-primary "
+                            (click)="addProduct('edit',data.id)">แก้ไข</button>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Second group">
+                          <button style="margin-right: 10px;" type="button" class="btn btn-danger "
+                            (click)="delete(data.id)">ลบ</button>
+                        </div>
+                        <button type="button" class="btn btn-warning" (click)="addProduct('',data.id)">รายละเอียด</button>
+                      </div>
+                    </div>
+                  </td>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+<!-- <div class="container">
+
+  <div class="card mt-2">
+    <div class="card-header">
+      เพิ่มสินค้า
+    </div>
+    <div class="card-body containerH ">
+      <div class="row">
+
+        <div class="col">
+          <div class="row">
+            <div class="home6">
+              <div class="form-group">
+                <label for="formGroupExampleInput" class="home21" style="margin-right: 20px;">ยี่ห้อ </label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="กรุณากรอกยี่ห้อ"
+                  [(ngModel)]="form.name">
+              </div>
+            </div>
+            <div class="home6">
+              <div class="form-group">
+                <label for="formGroupExampleInput2" class="home21">ราคา </label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="กรุณากรอกราคา "
+                  [(ngModel)]="form.money">
+              </div>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="home6 ">
+              <label for="formGroupExampleInput" class="home21">รสชาติ </label>
+              <select class="form-select text-center" aria-label="Default select example" selected [(ngModel)]="form.taste">
+                <option >กรุณาเลือกรสชาติ</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+            <div class="home6">
+              <div class="form-group">
+                <label for="formGroupExampleInput" class="home21">ปริมาณ </label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="กรุณากรอกปริมาณ"
+                  [(ngModel)]="form.amount">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="home6 mt-2">
+          <label for="formGroupExampleInput" class="home21">ประเภท </label>
+          <select class="form-select text-center" aria-label="Default select example" [(ngModel)]="form.type">
+            <option selected >กรุณาเลือกประเภท</option>
+            <option value="001">ซอง</option>
+            <option value="002">ถ้วย</option>
+          </select>
+
+        </div>
+      </div>
+
+      <div class="col text-center mt-3">
+        <button type="button" class="btn btn-primary " style="margin-right: 20px;" (click)="save()">เพิ่ม</button>
+        <button type="button" class="btn btn-secondary mr-3">กลับ</button>
+      </div>
+
+
+    </div>
+
+  </div>
+  <div class="alert alert-primary mt-3" role="alert" *ngFor="let item of listData;let i = index">
+    <div style="justify-content: space-between ;display :flex;">
+      <h5>ลำดับ {{i+1}} ชื่อ : {{item.name}}  ราคา : {{item.money}} รสชาติ : {{item.taste}}  ปริมาณ : {{item.amount}} ประเภท : {{item.type}} </h5>
+      <button type="button" class="btn btn-danger" (click)="delete(i)">ลบ</button>
+       <button type="button" class="btn btn-danger" (click)="editInfo(i)">เเก้ไข</button> 
+
+    </div> -->

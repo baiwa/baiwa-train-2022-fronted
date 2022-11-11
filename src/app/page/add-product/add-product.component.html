@@ -1,0 +1,99 @@
+<!-- <div class="alert alert-primary mt-3" role="alert" *ngFor="let item of listData;let i = index">
+      <div style="justify-content: space-between ;display :flex;">
+        <h5>ลำดับ {{i+1}} ชื่อ : {{item.name}}  ประเภท : {{item.type}}  </h5>
+        <button type="button" class="btn btn-danger" (click)="deleteInfo(i)">ลบ</button>
+        <button type="button" class="btn btn-danger" (click)="editInfo(i)">เเก้ไข</button>
+
+      </div>
+       -->
+
+<div class="row a1">
+  <div class="col ">
+    <div class="container">
+      <button class="btn btn-outline-secondary " type="button" id="button-addon2"
+        style="background: #33ACA5; border-color: #33ACA5; color: #fff;" routerLink="/product">
+        << กลับ</button>
+          <div class="card mt-2">
+
+            <div class="card-header" style="background-color:#50e1e1;">
+              {{text}}สินค้า
+            </div>
+            <div class="card-body">
+              <div class="row">
+
+                <div class="col">
+                  <div class="row" style="margin-left: 13%;">
+                    <div class="home6">
+                      <div class="form-group">
+                        <label for="formGroupExampleInput " style="margin-right: 20px;">ยี่ห้อ </label>
+                        <input [disabled]="detail" type="text" class="form-control" id="formGroupExampleInput"
+                          placeholder="กรุณากรอกยี่ห้อ" [(ngModel)]="form.name">
+                      </div>
+                    </div>
+                    <div class="home6">
+                      <div class="form-group">
+                        <label for="formGroupExampleInput2">ราคา </label>
+                        <input [disabled]="detail" type="text" class="form-control" id="formGroupExampleInput2"
+                          placeholder="กรุณากรอกราคา " [(ngModel)]="form.money">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mt-2" style="margin-left: 13%;">
+                    <div class="home6 ">
+                      <label for="formGroupExampleInput">รสชาติ </label>
+                      <select [disabled]="detail" class="form-select" aria-label="Default select example" selected
+                        [(ngModel)]="form.taste">
+                        <option>กรุณาเลือกรสชาติ</option>
+                        <option >หมูสับ</option>
+                        <option >ต้มยำกุ้ง</option>
+                        <option >ต้มเเซ่บ</option>
+                      </select>
+                    </div>
+                    <div class="home6">
+                      <div class="form-group">
+                        <label for="formGroupExampleInput">ปริมาณ </label>
+                        <input [disabled]="detail" type="text" class="form-control" id="formGroupExampleInput"
+                          placeholder="กรุณากรอกปริมาณ" [(ngModel)]="form.amount">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row" style="margin-left: 13%;">
+                <div class="home6 mt-2">
+                  <label for="formGroupExampleInput">ประเภท </label>
+                  <select [disabled]="detail" class="form-select " aria-label="Default select example"
+                    [(ngModel)]="form.type">
+                    <option selected>กรุณาเลือกประเภท</option>
+                    <option value="001">ซอง</option>
+                    <option value="002">ถ้วย</option>
+                  </select>
+
+                </div>
+              </div>
+
+              <div class="col text-center mt-3">
+
+                <button *ngIf="!detail" type="button" class="btn btn-primary " style="margin-right: 20px;"
+                  (click)="save()">{{text}}</button>
+
+              </div>
+
+            </div>
+          </div>
+
+
+          <!-- <div class="alert alert-primary mt-3" role="alert" *ngFor="let item of listData;let i = index">
+            <div style="justify-content: space-between ;display :flex;">
+              <h5>ลำดับ {{i+1}} ชื่อ : {{item.name}} ราคา : {{item.money}} รสชาติ : {{item.taste}} ปริมาณ :
+                {{item.amount}}
+                ประเภท : {{item.type}} </h5>
+              <button type="button" class="btn btn-danger" (click)="delete(i)">ลบ</button>
+            </div>
+          </div> -->
+
+
+
+    </div>
+  </div>
+</div>
