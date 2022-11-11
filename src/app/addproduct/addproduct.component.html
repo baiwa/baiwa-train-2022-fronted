@@ -1,4 +1,4 @@
-<div class="wrapper">
+<!-- <div class="wrapper">
     <h1 class="htext" style="text-align:center">เพิ่มข้อมูลสินค้า</h1>
     <div class="row">
         <div class="col" style="padding: 100px;">
@@ -37,4 +37,96 @@
         </div>
         
     </div>
+</div> -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" routerLink="">หน้าหลัก</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/product">คลังสินค้า <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/addproduct">+เพิ่มข้อมูลสินค้า</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+<div class="wrapper">
+    <div class="container-space ">
+        <h1 style="text-align:center" class="text">{{textHeader}}</h1>
+        <div class="buntonstye">
+            <button type="button" class="btn btn-secondary mb-3" routerLink="/product">
+                กลับคลังสินค้า</button>
+                    <button *ngIf="!details" type="button" style="color: white;" class="backgroundB mb-3" (click)="save()">บันทึกข้อมูล</button>
+        </div>
+        <div class="mb-5 ">
+            <div class="card-body background "style="border-radius: 10px;">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label style="color: white;">ยี่ห้อ :</label>
+                            <input [disabled]="details" type="text" class="form-control" placeholder="ยี่ห้อ" [(ngModel)]="form.brand">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label style="color: white;">ประเภท :</label>
+                            <select [disabled]="details" class="form-control" [(ngModel)]="form.typeProduct">
+                                <option value="001">ซอง</option>
+                                <option value="002">ถ้วย</option>
+                            </select>
+                        </div>
+                        <!-- <div class="form-group">
+                            <label>ประเภท</label>
+                            <input type="text" class="form-control" placeholder="ประเภท">
+                        </div> -->
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col">
+                        <div class="form-group">
+                            <label style="color: white;">รสชาติ :</label>
+                            <select [disabled]="details" class="form-control" [(ngModel)]="form.taste">
+                                <!-- <option selected disabled >กรุณาเลือกประเภท</option> -->
+                                <option>หวาน</option>
+                                <option>เค็ม</option>
+                                <option>เผ็ด</option>
+                                <option>เปรี้ยว</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label style="color: white;">ปริมาณ :</label>
+                            <input [disabled]="details" type="text" class="form-control" placeholder="ปริมาณ" [(ngModel)]="form.weight">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label style="color: white;">ราคา :</label>
+                            <input [disabled]="details" type="text" class="form-control" placeholder="ราคา" [(ngModel)]="form.price">
+                        </div>
+                    </div>
+                    <div class="col">
+    
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col text-center">
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+    </div>
 </div>
+  

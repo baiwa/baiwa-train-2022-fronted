@@ -9,6 +9,7 @@ import { Page1Component } from './page1/page1.component';
 import { Profile1Component } from './profile1/profile1.component';
 import { ProductComponent } from './product/product.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,13 +18,14 @@ import { AddproductComponent } from './addproduct/addproduct.component';
     Page1Component,
     Profile1Component,
     ProductComponent,
-    AddproductComponent
+    AddproductComponent,
   ],
   imports: [
     ReactiveFormsModule,
     FormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

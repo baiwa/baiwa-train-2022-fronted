@@ -1,7 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-export interface MyData{
+export interface MyData {
   name: string;
   age: number;
 }
@@ -14,7 +15,7 @@ export interface MyData{
 export class HomeComponent implements OnInit {
 
   form: MyData = {
-    name : '',
+    name: '',
     age: 0,
   }
 
@@ -24,26 +25,25 @@ export class HomeComponent implements OnInit {
   name1: any;
   count: number = 0;
   isShow: boolean = false;
-  
+
 
   constructor(
     private router: Router,
   ) { }
 
   ngOnInit(): void {
+    
   }
 
-  delete(i : number){
-      this.listData.splice(i, 1);
+  delete(i: number) {
+    this.listData.splice(i, 1);
   }
 
-  save(){
-    if(this.form.name.trim()=='')
-    {
+  save() {
+    if (this.form.name.trim() == '') {
       return;
     }
-    else if(this.form.age<=0)
-    {
+    else if (this.form.age <= 0) {
       return;
     }
     this.listData.push({
@@ -54,25 +54,24 @@ export class HomeComponent implements OnInit {
     this.form.age = 0;
   }
 
-  changeName(name : string) {
-    this.name  = name;
+  changeName(name: string) {
+    this.name = name;
   }
 
-  countCal(num : string){
-    if(num == 'add'){
+  countCal(num: string) {
+    if (num == 'add') {
       this.count += 1;
     }
-    else if(num == 'delete')
-    {
+    else if (num == 'delete') {
       this.count -= 1;
 
-      if(this.count<0){
+      if (this.count < 0) {
         this.count = 0;
       }
     }
-    
+
   }
 
-  
+
 
 }

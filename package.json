@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build  --base-href /baiwa-train-2022-fronted-nui/ --build-optimizer --aot --output-hashing=all",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

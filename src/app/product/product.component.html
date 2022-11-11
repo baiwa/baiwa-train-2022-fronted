@@ -1,62 +1,202 @@
-<div class="wrapper">
-    <h1 class="htext" style="text-align:center">ข้อมูลสินค้า</h1>
-    <div class="row">
-        <div class="col" style="padding: 100px;">
-            <div style="justify-content: space-between;display: flex;">
-                <div>
-                    <button type="button" class="btn btn-warning" routerLink="">
-                        <- กลับหน้าหลัก</button>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" routerLink="">หน้าหลัก</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/product">คลังสินค้า <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" (click)="gotoAddproduct('add',0)">+เพิ่มข้อมูลสินค้า</a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+
+<div class="background">
+    <div class="row" style="background: #406861;">
+        <div class="col">
+            <div class="container-space ">
+                <h1 style="text-align:center" class="text">คลังสินค้า</h1>
+                <div style="justify-content: space-between;display: flex;">
+
+                    <button type="button" class="btn btn-secondary mb-3" routerLink=""> กลับหน้าหลัก</button>
+                    <button type="button" class="backgroundB mb-3" style="color: white;"
+                        (click)="gotoAddproduct('add',0)">+
+                        เพิ่มข้อมูลสินค้า</button>
+
                 </div>
-                <div>
-                    <button type="button" class="btn btn-danger" routerLink="/addproduct">+ เพิ่มข้อมูลสินค้า</button>
+                <div class="card text-center card-body boxtable" style="border-radius: 10px;">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group text-left">
+                                <label style="color: white;">ยี่ห้อ :</label>
+                                <input type="text " style="border-radius: 10px;" class="form-control"
+                                    placeholder="ยี่ห้อ" [(ngModel)]="formsearch.brand">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group text-left">
+                                <label style="color: white;">ประเภท :</label>
+                                <select class="form-control" style="border-radius: 10px;"
+                                    [(ngModel)]="formsearch.typeProduct">
+                                    <option value="001">ซอง</option>
+                                    <option value="002">ถ้วย</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group text-left ">
+                                <label style="color: white;">รสชาติ :</label>
+                                <select class="form-control" style="border-radius: 10px;"
+                                    [(ngModel)]="formsearch.taste">
+                                    <!-- <option selected disabled >กรุณาเลือกประเภท</option> -->
+                                    <option>หวาน</option>
+                                    <option>เค็ม</option>
+                                    <option>เผ็ด</option>
+                                    <option>เปรี้ยว</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group text-left">
+                                <label style="color: white;">ปริมาณ :</label>
+                                <input type="number" style="border-radius: 10px;" class="form-control"
+                                    placeholder="ปริมาณ" [(ngModel)]="formsearch.weight">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group text-left">
+                                <label style="color: white;">ราคา :</label>
+                                <input type="number" style="border-radius: 10px;" class="form-control"
+                                    placeholder="ราคา" [(ngModel)]="formsearch.price">
+                            </div>
+                        </div>
+                        <div class="col">
+
+                        </div>
+                    </div>
+                    <div class="col">
+                        <button type="button " class="btn btn-light mt-3 mb-5 h-50 "
+                            (click)="search()">ค้นหาสินค้า</button>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <table class="table table-striped boxtable ">
+                                <thead>
+                                    <tr style="color: white;">
+                                        <th scope="col" style="width: 5%;">ลำดับ</th>
+                                        <th scope="col" style="width: 18%;">ยี่ห้อ </th>
+                                        <th scope="col">ประเภท</th>
+                                        <th scope="col">รสชาติ</th>
+                                        <th scope="col">ปริมาณ</th>
+                                        <th scope="col">ราคา</th>
+                                        <th scope="col" style="width: 25%;">รายละเอียด</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let data of list;let i = index">
+                                        <th scope="row">{{i+1}}</th>
+                                        <td>{{data.brand}}</td>
+                                        <td>{{data.typeProduct}}</td>
+                                        <td>{{data.taste}}</td>
+                                        <td>{{data.weight}}</td>
+                                        <td>{{formatMoney(data.price)}}</td>
+                                        <td>
+                                            <button type="button" class="btn btn-warning ml-2"
+                                                (click)="gotoAddproduct('edit',data.id)">เเก้ไข</button>
+                                            <button type="button" class="btn btn-danger ml-2"
+                                                (click)="delete(data.id)">ลบข้อมูล</button>
+                                            <button type="button" class="btn btn-secondary ml-2"
+                                                (click)="gotoAddproduct('details',data.id)">รายละเอียด</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
                 </div>
-            </div><br>
 
-            <div class="boxtable">
-                <table class="table">
-                    <thead>
-                        <tr class="text">
-                            <th scope="col">ลำดับ</th>
-                            <th scope="col">ยี่ห้อ </th>
-                            <th scope="col">ประเภท</th>
-                            <th scope="col">รสชาติ</th>
-                            <th scope="col">ปริมาณ</th>
-                            <th scope="col">ราคา</th>
-                            <th scope="col">รายละเอียด</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let data of this.list;let i = index">
-                            <th scope="row">{{i+1}}</th>
-                            <td>{{data.name}}</td>
-                            <td>{{data.type}}</td>
-                            <td>{{data.taste}}</td>
-                            <td>{{data.amount}}</td>
-                            <td>{{data.price}}</td>
-                            <td>
-                                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+            </div>
+        </div>
 
-                                    <div class="btn-group mr-2" role="group" aria-label="First group">
-                                        <button type="button" class="btn btn-warning">ค้นหา</button>
-                                    </div>
+    </div>
 
-                                    <div class="btn-group mr-2" role="group" aria-label="Second group">
-                                        <button type="button" class="btn btn-warning">เเก้ไข</button>
-                                    </div>
+</div>
 
-                                    <div class="btn-group" role="group" aria-label="Third group">
-                                        <button type="button" class="btn btn-danger"
-                                            (click)="delete(i)">ลบข้อมูล</button>
-                                    </div>
 
-                                </div>
 
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+
+
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+<div class="container-space">
+    <button type="button" class="btn btn-secondary mb-3" routerLink="/">หน้าหลัก</button>
+    <div class="card mb-5">
+        <div class="card-header">
+            รายการสินค้า
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label>ชื่อ</label>
+                        <input type="text" class="form-control" placeholder="ชื่อ">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label>อายุ</label>
+                        <input type="text" class="form-control" placeholder="อายุ">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label>จังหวัด</label>
+                        <input type="text" class="form-control" placeholder="จังหวัด">
+                    </div>
+                </div>
+
+            </div>
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <button type="button" class="btn btn-primary mr-2">ค้นหา</button>
+                    <button type="button" class="btn btn-info " routerLink="/addproduct">เพิ่มข้อมูล</button>
+
+                </div>
             </div>
         </div>
     </div>
 
-</div>
+
+</div> -->
